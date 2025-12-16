@@ -574,121 +574,157 @@ a{ color:inherit; text-decoration:none; }
 /* =========================
    INFO (진료시간/오시는길)
 ========================= */
-.info{
+/* INFO2 (screenshot-like layout) */
+.info2{
   background:#fff;
-  padding: 78px 0 0; /* ✅ footer 밑 여백 안 생기게 아래는 0으로 */
+  padding: 0;
 }
 
-.info__grid{
-  display:grid;
-  grid-template-columns: 520px 1fr;
-  gap: 34px;
-  align-items:flex-start;
-  padding-bottom: 50px; /* 컨텐츠 마감만 */
-  border-bottom: 1px solid var(--line-3);
+.info2__wrap{
+  width: 1922px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  min-height: 520px;
 }
 
-.time{
-  margin: 10px 0 22px;
-  border-top: 1px solid var(--line-3);
-  border-bottom: 1px solid var(--line-3);
-  padding: 14px 0;
+/* LEFT */
+.info2__left{
+  padding: 76px 0 76px;
+  width: 780px;
+  margin-left: 320px; /* 스샷처럼 왼쪽 여백 */
 }
 
-.time > div{
-  display:grid;
-  grid-template-columns: 90px 1fr;
-  gap: 14px;
-  padding: 10px 0;
+.info2__title{
+  margin: 0 0 12px;
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--c-sub3);
 }
 
-.time dt{
-  font-family: var(--ff-body);
-  font-weight: 700;
+.info2__hours p{
+  margin: 0 0 6px;
   font-size: 13px;
   color: var(--t-700);
 }
-.time dd{
-  margin:0;
-  font-family: var(--ff-body);
-  font-weight: 400;
-  font-size: 13px;
+.info2__hours b{ font-weight: 800; }
+
+.info2__hours small{
+  display:block;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.7;
   color: var(--t-500);
 }
 
-.contact{
+.info2__tel{
+  margin-top: 26px;
   display:flex;
   align-items:baseline;
-  gap: 12px;
-  margin-bottom: 22px;
+  gap: 14px;
 }
 
-.tel-label{
-  margin:0;
-  font-family: var(--ff-body);
-  font-weight: 800;
-  font-size: 12px;
+.info2__tel-label{
+  font-weight: 900;
+  font-size: 20px;
   color: var(--c-sub3);
+  letter-spacing: .02em;
 }
 
-.tel{
-  margin:0;
+.info2__tel-num{
   font-family: var(--ff-main);
   font-weight: 800;
-  font-size: 26px;
-  color: var(--c-sub3);
+  font-size: 18px;
+  color: var(--t-700);
 }
 
-.mt32{ margin-top: 32px; }
+.info2__block--mt{ margin-top: 30px; }
 
-.addr{
-  margin: 0 0 14px;
-  font-family: var(--ff-body);
-  font-weight: 400;
+.info2__addr{
+  margin: 0 0 8px;
   font-size: 13px;
+  line-height: 1.8;
+  color: var(--t-700);
+}
+
+.info2__addr-sub{
+  margin: 0 0 22px;
+  font-size: 11px;
   line-height: 1.8;
   color: var(--t-500);
 }
 
-.way{
-  margin:0;
-  padding-left: 0;
+/* ROUTE LIST */
+.info2__route{
   list-style:none;
+  padding: 0;
+  margin: 0;
   display:flex;
   flex-direction:column;
-  gap: 10px;
-  font-family: var(--ff-body);
+  gap: 14px;
+}
+
+.info2__route li{
+  display:grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items:flex-start;
   font-size: 13px;
+  line-height: 1.7;
+  color: var(--t-700);
+}
+
+.info2__route b{
+  font-weight: 800;
+  color: var(--t-900);
+}
+
+/* icon boxes (subway/bus/car) */
+.info2__ico{
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid #111;
+  background: #fff;
+  position: relative;
+}
+
+/* 간단한 아이콘 느낌(이미지 없이 CSS로) */
+.info2__ico::after{
+  content:"";
+  position:absolute;
+  inset: 8px;
+  border-radius: 4px;
+  background: #111;
+  opacity: .08;
+}
+.info2__ico--subway{ border-color:#0b0b0b; }
+.info2__ico--bus{ border-color:#0b0b0b; }
+.info2__ico--car{ border-color:#0b0b0b; }
+
+.info2__fine{
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.7;
   color: var(--t-500);
 }
 
-.badge{
-  display:inline-flex;
-  align-items:center;
-  height: 24px;
-  padding: 0 10px;
-  border-radius: 999px;
-  background: #eef4ff;
-  color: var(--c-sub3);
-  font-weight: 800;
-  margin-right: 10px;
-  border: 1px solid #dbe7ff;
-  font-size: 12px;
-}
-
-.map{
-  border-radius: var(--r-16);
-  overflow:hidden;
-  border: 1px solid var(--line-3);
+/* RIGHT MAP */
+.info2__map{
   background:#fff;
-  box-shadow: var(--shadow-sm);
+  border-left: 1px solid #e9eef7;
+  overflow:hidden;
 }
 
-.map img{
-  width:100%;
-  height: 360px;
-  object-fit: cover;
+.info2__map iframe{
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  border: 0;
+  display:block;
 }
+
 
 /* =========================
    FOOTER (no bottom gap)

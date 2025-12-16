@@ -237,52 +237,81 @@
       </div>
     </section>
 
-    <!-- 진료시간 및 오시는길 -->
-    <section class="section info" id="info">
-      <div class="container info__grid">
-        <div class="info__left">
-          <h3 class="section-title">진료 시간</h3>
+<section class="info2" id="info">
+  <div class="info2__wrap">
 
-          <dl class="time">
-            <div>
-              <dt>평일</dt>
-              <dd>AM 09:00 ~ PM 19:00</dd>
-            </div>
-            <div>
-              <dt>토요일</dt>
-              <dd>AM 09:00 ~ PM 14:00 (점심시간 없이 진료)</dd>
-            </div>
-            <div>
-              <dt>점심시간</dt>
-              <dd>PM 12:30 ~ PM 14:00</dd>
-            </div>
-          </dl>
+    <!-- LEFT -->
+    <div class="info2__left">
+      <div class="info2__block">
+        <h3 class="info2__title">진료 시간</h3>
 
-          <div class="contact">
-            <p class="tel-label">TEL.</p>
-            <p class="tel">051-716-2548</p>
-          </div>
-
-          <h3 class="section-title mt32">오시는 길</h3>
-          <p class="addr">
-            부산광역시 사상구 사상로204 3층<br />
-            사상역(2호선) 6번 출구 도보 4분
-          </p>
-
-          <ul class="way">
-            <li><span class="badge">지하철</span> 2호선 사상역 6번 출구 도보 4분</li>
-            <li><span class="badge">버스</span> 사상시외버스터미널 사상역 하차</li>
-            <li><span class="badge">주차</span> 병원 건물 주차장 이용</li>
-          </ul>
-        </div>
-
-        <div class="info__right">
-          <div class="map">
-            <img src="./img/map.png" alt="지도 이미지" />
-          </div>
+        <div class="info2__hours">
+          <p><b>평일</b> : AM 09:00 – PM 19:00</p>
+          <p><b>토요일</b> : AM 09:00 – PM 14:00 (점심시간 없이 진료)</p>
+          <p><b>점심시간</b> : PM 12:30 – PM 14:00</p>
+          <small>일요일은 정기 휴무입니다.<br>* 공휴일 진료는 유선 문의해주세요.</small>
         </div>
       </div>
-    </section>
+
+      <div class="info2__tel">
+        <span class="info2__tel-label">TEL.</span>
+        <span class="info2__tel-num">051-716-2548</span>
+      </div>
+
+      <div class="info2__block info2__block--mt">
+        <h3 class="info2__title">오시는 길</h3>
+
+        <p class="info2__addr">
+          부산광역시 사상구 사상로204 3층<br>
+          사상역6번 출구에서 64m
+        </p>
+        <p class="info2__addr-sub">
+          * 사상메가몰앞, 사상시외버스터미널 맞은 편 투썸플레이스, 올리브영 건물 3층
+        </p>
+
+        <ul class="info2__route">
+          <li>
+            <span class="info2__ico info2__ico--subway" aria-hidden="true"></span>
+            <div>
+              <b>지하철</b> : 2호선 사상역 6번 출구에서 도보로 58m
+            </div>
+          </li>
+          <li>
+            <span class="info2__ico info2__ico--bus" aria-hidden="true"></span>
+            <div>
+              <b>버스</b> : 서부시외버스터미널 사상역 하차
+            </div>
+          </li>
+          <li>
+            <span class="info2__ico info2__ico--car" aria-hidden="true"></span>
+            <div>
+              <b>자가용</b> : 애플아울렛 주차장, 사상티오피 주차장
+              <div class="info2__fine">
+                - 기본 진료, 물리치료 : 1시간 무료<br>
+                - 도수치료, 체외충격파 : 2시간 무료<br>
+                - 신경주사 치료 : 2시간 무료
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT (실제 지도) -->
+    <div class="info2__map">
+      <!-- ✅ 구글/카카오/네이버 중 택1: src만 교체 -->
+      <iframe
+        title="사상튼튼정형외과 위치"
+        src="https://www.google.com/maps?q=부산광역시+사상구+사상로204&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -299,5 +328,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/swiper.js"></script>
+
 </body>
 </html>
