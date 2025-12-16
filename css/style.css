@@ -775,79 +775,113 @@ a{ color:inherit; text-decoration:none; }
   padding: 0;
 }
 
+/* 좌/우 2단 레이아웃을 flex로 */
 .info2__wrap{
-  width: 100%;
   max-width: 1922px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  min-height: 520px;
+  display: flex;
+  align-items: stretch;
 }
 
 /* LEFT */
 .info2__left{
-  padding: 76px 80px 76px 320px;
-  width: auto;
-  margin-left: 0; 
+  flex: 1;
+  padding: 76px 80px 70px 250px;
 }
 
-.info2__title{
-  margin: 0 0 12px;
+/* RIGHT MAP 고정 폭 */
+.info2__map{
+  width: 861px;
+  background:#fff;
+  border-left: 1px solid #e9eef7;
+  overflow: hidden;
+}
+
+.info2__map iframe{
+  width: 100%;
+  height: 100%;
+  min-height: 881px;
+  border: 0;
+  display: block;
+}
+
+/* 공통 row: (왼쪽 라벨 + 오른쪽 내용) */
+.info2__row{
+  display: flex;
+  align-items: flex-start;
+  gap: 34px;
+}
+
+.info2__row--mt{ margin-top: 42px; }
+
+/* 왼쪽 파란 라벨 */
+.info2__label{
+  width: 140px;
+  flex: 0 0 140px;
   font-family: var(--ff-main);
   font-weight: 800;
-  font-size: 24px;
+  font-size: 32px;
   color: var(--c-sub3);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
-.info2__hours p{
-  margin: 0 0 6px;
-  font-size: 13px;
+/* 오른쪽 컨텐츠 */
+.info2__content{
+  flex: 1;
+  min-width: 0;
+}
+
+/* 진료시간 줄 */
+.info2__content p{
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.6;
   color: var(--t-700);
 }
-.info2__hours b{ font-weight: 800; }
 
-.info2__hours small{
+.info2__content p b{
+  display: inline-block;
+  width: 80px;          /* ✅ 평일/토요일/점심시간 정렬 */
+  font-weight: 800;
+  color: var(--t-900);
+  white-space: nowrap;
+}
+
+.info2__content p{
+  white-space: nowrap;  /* ✅ AM/PM 줄바꿈 방지 */
+}
+
+/* 안내문구 */
+.info2__content small{
   display:block;
-  margin-top: 10px;
-  font-size: 11px;
-  line-height: 1.7;
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--t-500);
 }
 
-.info2__tel{
-  margin-top: 26px;
-  display:flex;
-  align-items:baseline;
-  gap: 14px;
-}
-
-.info2__tel-label{
-  font-weight: 900;
-  font-size: 20px;
-  color: var(--c-sub3);
-  letter-spacing: .02em;
-}
-
+/* TEL */
 .info2__tel-num{
+  margin: 0;
   font-family: var(--ff-main);
-  font-weight: 800;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 28px;
   color: var(--t-700);
 }
 
-.info2__block--mt{ margin-top: 30px; }
-
+/* 주소 */
 .info2__addr{
   margin: 0 0 8px;
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 20px;
+  line-height: 1.7;
   color: var(--t-700);
 }
 
 .info2__addr-sub{
-  margin: 0 0 22px;
-  font-size: 11px;
-  line-height: 1.8;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
   color: var(--t-500);
 }
 
@@ -855,19 +889,18 @@ a{ color:inherit; text-decoration:none; }
 .info2__route{
   list-style:none;
   padding: 0;
-  margin: 0;
+  margin: 22px 0 0;
   display:flex;
   flex-direction:column;
-  gap: 14px;
+  gap: 18px;
 }
 
 .info2__route li{
-  display:grid;
-  grid-template-columns: 44px 1fr;
-  gap: 12px;
-  align-items:flex-start;
-  font-size: 13px;
-  line-height: 1.7;
+  display:flex;
+  align-items:center;
+  gap: 18px;
+  font-size: 20px;
+  line-height: 1.45;
   color: var(--t-700);
 }
 
@@ -876,37 +909,19 @@ a{ color:inherit; text-decoration:none; }
   color: var(--t-900);
 }
 
-/* icon boxes (subway/bus/car) */
 .info2__ico{
-  width: 44px;
-  height: 44px;
-  position: relative;
+  width: 54px;
+  height: 54px;
+  display:block;
+  object-fit: contain;
 }
 
-
-
 .info2__fine{
-  margin-top: 20px;
-  font-size: 11px;
+  margin-top: 18px;
+  font-size: 13px;
   line-height: 1.7;
   color: var(--t-500);
 }
-
-/* RIGHT MAP */
-.info2__map{
-  background:#fff;
-  border-left: 1px solid #e9eef7;
-  overflow:hidden;
-}
-
-.info2__map iframe{
-  width: 100%;
-  height: 100%;
-  min-height: 520px;
-  border: 0;
-  display:block;
-}
-
 
 /* =========================
    FOOTER (no bottom gap)
