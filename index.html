@@ -39,7 +39,7 @@
           <!-- slide 1 -->
           <div class="swiper-slide hero-slide">
             <div class="hero-slide__bg">
-              <img src="./img/hero-1.png" alt="" />
+              <img src="./img/hero1.png" alt="" />
             </div>
             <div class="hero-slide__content">
               <p class="hero-kicker">Sasang Teunteun Orthopedics Clinic</p>
@@ -57,16 +57,15 @@
           <!-- slide 2 -->
           <div class="swiper-slide hero-slide">
             <div class="hero-slide__bg">
-              <img src="./img/hero-2.png" alt="" />
+              <img src="./img/hero2.jpg" alt="" />
             </div>
             <div class="hero-slide__content">
-              <p class="hero-kicker">Sasang Teunteun Orthopedics Clinic</p>
               <h2 class="hero-title">
-                정형외과 전문의<br />
-                체계적인 통증 케어
+                질환 너머의 이야기까지<br />
+                따뜻한 경청으로
               </h2>
               <p class="hero-desc">
-                검사부터 재활까지 한 흐름으로 연결합니다.
+                환자의 증상을 먼저 듣고, 마음까지 살피는 진료를 진행합니다.
               </p>
             </div>
           </div>
@@ -74,16 +73,14 @@
           <!-- slide 3 -->
           <div class="swiper-slide hero-slide">
             <div class="hero-slide__bg">
-              <img src="./img/hero-3.png" alt="" />
+              <img src="./img/hero3.jpg" alt="" />
             </div>
             <div class="hero-slide__content">
-              <p class="hero-kicker">Sasang Teunteun Orthopedics Clinic</p>
               <h2 class="hero-title">
-                정확한 진단 ·<br />
-                개인 맞춤 치료
+                다시 자유롭게 활동할 수 있도록
               </h2>
               <p class="hero-desc">
-                생활 패턴까지 고려해 치료 계획을 설계합니다.
+                건강한 움직임을 위한 맞춤형 케어를 제공합니다.
               </p>
             </div>
           </div>
@@ -95,27 +92,42 @@
       </div>
     </section>
 
-    <!-- 병원 소개 -->
-    <section class="section about" id="about">
-      <div class="container about__grid">
-        <div class="about__text">
-          <h3 class="section-title">병원 소개</h3>
-          <p class="section-headline">
-            사상튼튼정형외과는 바른 진단과 치료로<br />
-            환자분들의 통증과 불편을 해소하는 데 집중합니다.
-          </p>
-          <p class="section-body">
-            대학병원 수련과 다양한 임상 경험을 갖춘 정형외과 전문의가
-            정확한 진단, 체계적인 치료로 회복을 돕습니다.<br />
-            환자 개개인에게 가장 적합한 방법으로 치료하는 사상튼튼정형외과가 되겠습니다.
-          </p>
-        </div>
+<!-- 병원 소개 -->
+<section class="about3" id="about">
+  <!-- BG 1: 복도(왼쪽 전체 배경) -->
+  <div class="about3__bgHall" aria-hidden="true">'
+    <img src="./img/lobby_left.png" alt="병원 내부 복도" />
+  </div>
 
-        <div class="about__visual">
-          <img src="./img/about-lobby.jpg" alt="병원 내부 대기 공간" />
-        </div>
-      </div>
-    </section>
+  <!-- 밝기/가독성 오버레이 -->
+  <div class="about3__overlay" aria-hidden="true"></div>
+
+  <div class="container about3__inner">
+    <!-- 텍스트 박스(중앙) -->
+    <div class="about3__textBox">
+      <h3 class="about3__title">병원 소개</h3>
+
+      <p class="about3__headline">
+        사상튼튼정형외과는 바른 진단과 치료로<br />
+        환자분들의 통증과 불편을 해소하는 데 집중합니다.
+      </p>
+
+      <p class="about3__body">
+        대학병원 수련과 다양한 임상 경험을 갖춘 정형외과 전문의가 직접 진료하며,<br>
+        첨단 장비를 통한 정밀 검사로 안정적이고 신뢰할 수 있는 치료를 도와드립니다.<br>
+        늘 가까이에서, 가족을 돌보는 마음으로 진료하는 사상튼튼정형외과가 되겠습니다.
+      </p>
+    </div>
+
+    <!-- BG 2: 로비(오른쪽 카드) -->
+    <div class="about3__photoCard" aria-hidden="false">
+      <img src="./img/lobby_right.jpg" alt="병원 내부 대기 공간" />
+    </div>
+  </div>
+</section>
+
+
+
 
     <!-- 의료진 소개 -->
     <section class="section doctors" id="doctors">
@@ -130,15 +142,27 @@
           <div class="doctor-profile">
             <h4>現</h4>
             <ul>
-              <li>사상튼튼정형외과 대표원장</li>
-              <li>정형외과 진료/통증치료</li>
+              <li>사상튼튼 정형외과 대표원장</li>
+              <li>경희대학교 의과대학 외래교수</li>
+              <li>고신대학교 의과대학 외래교수</li>
             </ul>
 
             <h4>前</h4>
             <ul>
-              <li>정형외과/재활 관련 경력 기재</li>
-              <li>학회/연수 수료 경력 기재</li>
-              <li>AO Trauma Course 수료 등</li>
+              <li>
+                강동 경희대병원 정형외과 임상강사 <br>
+                부산·경남지방 병무청 정형외과 수석판정의<br>
+                진해 세명병원 원장<br>
+                한양류마디병원 과장<br>
+                AO Trauma Course 수료<br>
+                Severance Arthroscopy Cadavar Workshop 수료<br>
+                서울대학교병원 소아 정형외과 연수<br>
+                대한통증의학회 TPI 과정 이수<br>
+                대한정형외과학회 정회원<br>
+                대한슬관절학회 정회원<br>
+                대한견주관절학회 정회원<br>
+                대한골절학회 정회원
+              </li>
             </ul>
           </div>
         </div>
@@ -147,7 +171,9 @@
           <img src="./img/doctor.png" alt="의료진 사진" />
         </div>
 
-        <div class="doctors__accent" aria-hidden="true"></div>
+        <div class="doctors__accent" aria-hidden="true">
+          <img src="./img/doctor_bg.png" alt="의료진 배경" />
+        </div>
       </div>
     </section>
 
@@ -157,8 +183,8 @@
         <div class="treat__left">
           <h3 class="section-title section-title--light">진료 소개</h3>
           <p class="treat__desc">
-            사상튼튼정형외과는 정형외과 전문의가
-            적절한 처방과 맞춤치료에서의 치료를 제공합니다.
+            사상튼튼정형외과는 정형외과 전문의가 <br>
+            환자 개개인에 맞추어 섬세하게 치료합니다.
           </p>
         </div>
 
@@ -167,29 +193,53 @@
             <div class="swiper-wrapper">
 
               <div class="swiper-slide treat-card">
-                <img src="./img/treat-1.jpg" alt="척추/관절 치료" />
+                <img src="./img/treat1.png" alt="척추/관절 치료" />
                 <h4>척추/관절 치료</h4>
-                <p>정확한 검사와 단계별 치료를 제공합니다.</p>
+                <p>첨단 장비를 사용하여 목,허리,손목,팔꿈치, <br>
+                  무릎,관절 퇴행성 치료 등을 진행합니다.</p>
               </div>
 
               <div class="swiper-slide treat-card">
-                <img src="./img/treat-2.jpg" alt="비수술적 치료" />
+                <img src="./img/treat2.png" alt="비수술적 치료" />
                 <h4>비수술적 치료</h4>
-                <p>주사·재활 등 보존적 치료 중심.</p>
+                <p>프롤로, 인대강화, 연골주사 등 다양한 <br>
+                  주사치료를 1:1맞춤 진료로 진행합니다.</p>
               </div>
 
               <div class="swiper-slide treat-card">
-                <img src="./img/treat-3.jpg" alt="체형/근력 재활" />
-                <h4>체형·근력 재활</h4>
-                <p>회복 이후 재발 방지까지 설계합니다.</p>
+                <img src="./img/treat3.png" alt="체외충격파 치료" />
+                <h4>체외충격파 치료</h4>
+                <p>석회성건염, 엘보우, 족저근막염, 손목건초염 등 <br>
+                  질환을 진단해 체외충격파 치료를 진행합니다</p>
+              </div>
+
+              <div class="swiper-slide treat-card">
+                <img src="./img/treat4.png" alt="도수치료" />
+                <h4>도수치료</h4>
+                <p>일자목, 척추측만증, 척추후만증, 체형교정, 골반교정 등 <br>
+                  변형된 우리 몸을 바르게 교정합니다.</p>
+              </div>
+
+              <div class="swiper-slide treat-card">
+                <img src="./img/treat5.png" alt="외상치료" />
+                <h4>외상치료</h4>
+                <p>골절,염좌,봉합,타박상, 등 환자의 상태에 따라 <br>
+                수술치료와 비수술치료를 선택하여 치료합니다.</p>
+              </div>
+
+              <div class="swiper-slide treat-card">
+                <img src="./img/treat6.png" alt="족부클리닉" />
+                <h4>족부클리닉</h4>
+                <p>발목인대,연골손상,발목관절염, 아킬레스건,족저근막염  <br>
+                  족부와 관련된 집중 치료를 진행합니다.</p>
               </div>
 
             </div>
 
-            <div class="treat-nav">
+   <!--          <div class="treat-nav">
               <button type="button" class="nav-btn treat-prev" aria-label="이전">‹</button>
               <button type="button" class="nav-btn treat-next" aria-label="다음">›</button>
-            </div>
+            </div> -->
 
             <div class="swiper-pagination treat-pagination"></div>
           </div>
@@ -199,30 +249,47 @@
 
     <!-- 장비 소개 (Swiper) -->
     <section class="section equip" id="equip">
+
       <div class="container">
+        <div class="equip_bg">
+          <img src="./img/equip_bg.png" alt="장비 소개 배경" />
+        </div>
         <h3 class="section-title center">장비 소개</h3>
 
         <div class="swiper equip-swiper">
           <div class="swiper-wrapper">
 
             <div class="swiper-slide equip-card">
-              <img src="./img/equip-1.png" alt="삼성 메디슨 V6 초음파 장비" />
+              <img src="./img/equip1.png" alt="삼성 메디슨 V6 초음파 장비" />
               <p class="equip-name">삼성 메디슨 V6 초음파 장비</p>
             </div>
 
             <div class="swiper-slide equip-card">
-              <img src="./img/equip-2.png" alt="Genoray ZEN-2090 Turbo" />
+              <img src="./img/equip2.png" alt="Genoray ZEN-2090 Turbo" />
               <p class="equip-name">Genoray ZEN-2090 Turbo</p>
             </div>
 
             <div class="swiper-slide equip-card">
-              <img src="./img/equip-3.png" alt="Zeus Wave ESWT(체외충격파)" />
+              <img src="./img/equip3.png" alt="Zeus Wave ESWT(체외충격파)" />
               <p class="equip-name">Zeus Wave ESWT(체외충격파)</p>
             </div>
 
             <div class="swiper-slide equip-card">
-              <img src="./img/equip-4.png" alt="추가 장비" />
-              <p class="equip-name">추가 장비</p>
+              <img src="./img/equip4.png" alt="Eco-Ray, DR tech MultiDtector(엑스레이)" />
+              <p class="equip-name">
+                Eco-Ray, DR tech MultiDtector(엑스레이)</p>
+            </div>
+            <div class="swiper-slide equip-card">
+              <img src="./img/equip5.png" alt="TESLA-3000(자기장치료기)" />
+              <p class="equip-name">TESLA-3000(자기장치료기)</p>
+            </div>
+            <div class="swiper-slide equip-card">
+              <img src="./img/equip6.png" alt="아쿠아렉스 HAS-1300(수치료기)" />
+              <p class="equip-name">아쿠아렉스 HAS-1300(수치료기)</p>
+            </div>
+            <div class="swiper-slide equip-card">
+              <img src="./img/equip7.png" alt="Lipus(저강도 펄스 초음파)" />
+              <p class="equip-name">Lipus(저강도 펄스 초음파)</p>
             </div>
 
           </div>
@@ -232,7 +299,7 @@
             <button type="button" class="nav-btn equip-next" aria-label="다음">›</button>
           </div>
 
-          <div class="swiper-pagination equip-pagination"></div>
+          <!-- <div class="swiper-pagination equip-pagination"></div> -->
         </div>
       </div>
     </section>
@@ -316,9 +383,12 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer__inner">
-        <img src="./img/logo-white.png" alt="사상튼튼정형외과" class="footer__logo" />
+        <img src="./img/logo_white.png" alt="사상튼튼정형외과" class="footer__logo" />
         <p class="footer__txt">
-          개인정보처리방침 | 이용약관 | 비급여수가<br />
+          <a href="개인정보처리방침">개인정보처리방침 </a>
+          <a href="이용약관">이용약관</a>
+          <a href="비급여수가">비급여수가</a>
+
           COPYRIGHT © 2025 SASANG TEUNTEUN ORTHOPEDICS. ALL RIGHT RESERVED.
         </p>
       </div>

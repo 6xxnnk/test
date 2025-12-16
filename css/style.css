@@ -12,10 +12,10 @@
   --container: 1280px;
 
   /* brand colors */
-  --c-main: #003A8C;   /* main */
-  --c-sub1: #062B63;   /* sub1 */
-  --c-sub2: #0063B8;   /* sub2 */
-  --c-sub3: #1E7BFF;   /* sub3 (accent blue) */
+  --c-main: #003D9D;   /* main */
+  --c-sub1: #001F60;   /* sub1 */
+  --c-sub2: #0067C8;   /* sub2 */
+  --c-sub3: #0099FF;   /* sub3 (accent blue) */
   --c-soft: #F3F6FB;   /* hero bg soft */
 
   /* text colors */
@@ -31,7 +31,7 @@
   --line-3: #E6ECF6;
 
   /* fonts */
-  --ff-main: "Nanum Gothic", Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  --ff-main: "Nanum Square", Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
   --ff-body: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
 
   /* radius */
@@ -48,7 +48,7 @@
    RESET / BASE
 ========================= */
 *{ box-sizing: border-box; }
-html, body{ margin:0; padding:0; }
+html, body{ margin:0; padding:0; overflow-x: hidden; }
 body{
   font-family: var(--ff-body);
   color: var(--t-900);
@@ -56,10 +56,10 @@ body{
 }
 
 .wrap{
-  width: var(--page-w);
-  min-height: var(--page-h);
+  max-width: var(--page-w);
+  width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: clip;   /* hidden보다 clip이 더 안전 */
 }
 
 .container{
@@ -109,7 +109,7 @@ a{ color:inherit; text-decoration:none; }
 
 .header__inner{
   width: var(--container);
-  height: 76px;
+  height: 109px;
   margin: 0 auto;
   display:flex;
   align-items:center;
@@ -117,7 +117,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .brand{ display:flex; align-items:center; gap:10px; }
-.brand__logo{ height: 34px; width:auto; }
+.brand__logo{ height: 65.75px; width:auto; }
 
 .gnb{
   display:flex;
@@ -125,8 +125,8 @@ a{ color:inherit; text-decoration:none; }
   gap: 44px;
   font-family: var(--ff-body);
   font-weight: 500;
-  font-size: 14px;
-  color: var(--t-700);
+  font-size: 15px;
+  color: var(--t-900);
 }
 
 .gnb a{
@@ -148,21 +148,19 @@ a{ color:inherit; text-decoration:none; }
    HERO (match screenshot)
 ========================= */
 .hero{
-  height: 420px;
+  height: 771px;
   background: var(--c-soft);
 }
 
 .hero .swiper{
-  width: 100%;
-  height: 420px;
+  height: 771px;
 }
 
-.hero .swiper-wrapper{ width:100%; }
-.hero .swiper-slide{ width:100% !important; }
+
 
 .hero-slide{
   position: relative;
-  height: 420px;
+  height: 771px;
   overflow: hidden;
 }
 
@@ -185,20 +183,20 @@ a{ color:inherit; text-decoration:none; }
   inset:0;
   background:
     linear-gradient(90deg,
-      rgba(244,247,252,1) 0%,
-      rgba(244,247,252,.97) 38%,
-      rgba(244,247,252,.65) 58%,
-      rgba(244,247,252,.08) 82%,
+      rgba(244,247,252,.92) 0%,
+      rgba(244,247,252,.85) 35%,
+      rgba(244,247,252,.55) 55%,
+      rgba(244,247,252,.18) 75%,
       rgba(244,247,252,0) 100%
     );
 }
-
+  
 .hero-slide__content{
   position: relative;
   width: var(--container);
   height:100%;
   margin: 0 auto;
-  padding-left: 70px; /* screenshot-like left inset */
+  padding-left: 70px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -208,8 +206,8 @@ a{ color:inherit; text-decoration:none; }
 .hero-kicker{
   margin:0;
   font-family: var(--ff-body);
-  font-weight: 400;
-  font-size: 12px;
+  font-weight: 200;
+  font-size: 19.5px;
   line-height: 1.2;
   letter-spacing: .12em;
   color: rgba(0,0,0,.18);
@@ -219,7 +217,7 @@ a{ color:inherit; text-decoration:none; }
   margin:0;
   font-family: var(--ff-main);
   font-weight: 800;
-  font-size: 50px;
+  font-size: 74px;
   line-height: 1.12;
   letter-spacing: 0;
   color: var(--c-sub3);
@@ -228,29 +226,37 @@ a{ color:inherit; text-decoration:none; }
 .hero-desc{
   margin:0;
   font-family: var(--ff-body);
-  font-weight: 400;
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 28px;
   line-height: 1.7;
-  color: rgba(0,0,0,.55);
+  color:#484848;
 }
 
-/* hero pagination: 3 dots under text (left) */
+/* hero pagination: 이미지처럼 (active=캡슐, inactive=원) */
 .hero-pagination{
   position:absolute !important;
   left: calc((100% - var(--container))/2 + 70px) !important;
   bottom: 92px !important;
   width: auto !important;
+
+  display: flex !important;
+  align-items: center;
+  gap: 8px; /* 원들 사이 간격 */
 }
 
 .hero-pagination .swiper-pagination-bullet{
-  width: 6px;
-  height: 6px;
-  margin: 0 4px !important;
-  background: rgba(0,0,0,.25);
+  width: 12.79px;
+  height: 12.79px;
+  margin: 0 !important;          /* Swiper 기본 margin 제거 */
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);   /* 비활성 회색 */
   opacity: 1;
+  transition: width .25s ease, background-color .25s ease;
 }
+
 .hero-pagination .swiper-pagination-bullet-active{
-  background: var(--c-sub3);
+  width: 24.92px;                 /* 활성만 길게 */
+  background: var(--c-sub3);      /* 파란색 */
 }
 
 /* =========================
@@ -260,63 +266,97 @@ a{ color:inherit; text-decoration:none; }
   padding: 88px 0;
 }
 
-.section-title{
-  margin: 0 0 18px;
-  font-family: var(--ff-main);
-  font-weight: 800;
-  font-size: 28px;
-  line-height: 1.2;
-  letter-spacing: 0;
-  color: var(--c-sub3);
-}
 
 .center{ text-align:center; }
 
 /* =========================
    ABOUT (병원소개 - screenshot vibe)
 ========================= */
-.about{
+.about3{
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
   background:#fff;
+  height: 880px;
+  width: 100%;
 }
 
-.about__grid{
-  display:grid;
-  grid-template-columns: 1.02fr .98fr;
-  gap: 44px;
-  align-items:center;
+/* BG 1: 복도 배경 */
+.about3__bgHall{
+  position: absolute;
+  inset: 0;
+  opacity: .22;
+  transform: scale(1.02);
+  z-index: 0;
+
 }
 
-.section-headline{
-  margin: 0 0 14px;
-  font-family: var(--ff-body);
-  font-weight: 700;
-  font-size: 18px;
+.about3__bgHall img{
+  width:1400px;
+  height:100%;
+  object-fit: cover;
+}
+
+.about3__inner{
+  position: relative;
+  z-index: 2;
+  min-height: 320px;
+  margin-top: 150px;
+}
+
+/* 텍스트 박스(이미지처럼 가운데 정렬) */
+.about3__textBox{
+  margin-top:100px;
+  width: 634px;
+  text-align: center;
+}
+
+.about3__title{
+  margin: 0 0 16px;
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 50px;
+  color: var(--c-sub2);
+}
+
+.about3__headline{
+  margin: 50px 0 14px;
+  font-weight: 800;
+  font-size: 32px;
   line-height: 1.5;
   color: var(--t-900);
 }
 
-.section-body{
-  margin:0;
-  font-family: var(--ff-body);
+.about3__body{
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.3;
+  color: rgba(25,25,25,.55);
   font-weight: 400;
-  font-size: 13px;
-  line-height: 1.85;
-  color: var(--t-500);
 }
 
-.about__visual{
-  border-radius: var(--r-16);
-  overflow:hidden;
-  border: 1px solid var(--line-3);
+
+.about3__photoCard{
+  position: absolute;
+  right: -25%;
+  top: -30%;
+  transform: translateY(0%);
+  width: 860px;
+  height: 550px;
+  overflow: hidden;
   background:#fff;
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 18px 42px rgba(0,0,0,.20);
 }
 
-.about__visual img{
+.about3__photoCard img{
   width:100%;
-  height: 320px;
+  height:100%;
   object-fit: cover;
 }
+
+
+
 
 /* =========================
    DOCTORS (의료진소개 - screenshot vibe)
@@ -325,22 +365,37 @@ a{ color:inherit; text-decoration:none; }
   position: relative;
   background:#fff;
   padding-bottom: 70px;
+  overflow: hidden;
 }
 
-.doctors__grid{
+
+  .doctors__grid{
   position: relative;
   display:grid;
   grid-template-columns: 1fr 520px;
-  gap: 22px;
+  gap: 50px;
   align-items:center;
+  min-height: 520px;
 }
 
+.doctors__text{
+  text-align: right;
+  margin-right: 200px;
+}
+
+.doctors h3{
+  margin: 0 0 16px;
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 50px;
+  color: var(--c-sub2);}
+
 .doctor-name{
-  margin: 6px 0 18px;
+  margin: 80px 0 30px 0;
   font-family: var(--ff-body);
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.6;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1;
   color: var(--t-700);
 }
 
@@ -349,15 +404,16 @@ a{ color:inherit; text-decoration:none; }
   margin-top: 6px;
   font-family: var(--ff-main);
   font-weight: 800;
-  font-size: 22px;
+  font-size: 39px;
   color: var(--t-900);
 }
 
 .doctor-profile h4{
+
   margin: 18px 0 8px;
   font-family: var(--ff-body);
-  font-weight: 700;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 30px;
   color: var(--t-700);
 }
 
@@ -366,9 +422,11 @@ a{ color:inherit; text-decoration:none; }
   padding-left: 16px;
   font-family: var(--ff-body);
   font-weight: 400;
-  font-size: 12px;
-  line-height: 1.9;
+  font-size: 19px;
+  line-height: 1.5;
   color: var(--t-500);
+  list-style: none;
+
 }
 
 .doctors__photo{
@@ -376,156 +434,271 @@ a{ color:inherit; text-decoration:none; }
   display:flex;
   justify-content:flex-end;
   z-index:2;
+
 }
 
 .doctors__photo img{
-  width: 470px;
-  height:auto;
+  display: block;
+  max-width: 640px;    /* 원하는 사이즈로 조절 */
+  height: auto;
 }
 
 .doctors__accent{
-  position:absolute;
-  right:-260px;
-  top: 50%;
+  position: absolute;
+  right: -25%;
+  top: 30%;
   transform: translateY(-50%);
-  width: 820px;
-  height: 420px;
-  background: linear-gradient(135deg, rgba(87,188,255,.28), rgba(30,123,255,0));
-  border-radius: 999px;
-  z-index:1;
-  pointer-events:none;
+  width: 520px;          /* 그래픽 크기 */
+  height: 520px;
+  background: url("./img/doctor_bg.png")contain;
+  z-index: 1;           
+  pointer-events: none; 
+  opacity: 1;  
 }
+
 
 /* =========================
-   TREAT (진료소개 - dark section + swiper)
+   TREAT (진료 소개) - screenshot style
 ========================= */
 .treat{
-  background: linear-gradient(180deg, var(--c-sub1) 0%, #041a44 100%);
-  color: #eaf0ff;
-  padding: 74px 0 78px;
+  position: relative;
+  background: linear-gradient(180deg, #002b73 0%, #041a44 100%);
+  color:#eaf0ff;
+  padding: 86px 0 86px;
+  overflow: hidden;
+  height: 880px;
 }
 
+/* 중앙 큰 타이틀(섹션 위) */
+/* .treat::before{
+  content: "진료 소개";
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  color: rgba(255,255,255,.95);
+  z-index: 2;
+}
+ */
+
+.treat::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse at 30% 10%,
+      rgba(255,255,255,.10) 0%,
+      rgba(255,255,255,0) 55%),
+    radial-gradient(ellipse at 80% 30%,
+      rgba(0,0,0,.25) 0%,
+      rgba(0,0,0,0) 60%);
+  opacity: .35;
+  z-index: 0;
+}
+
+.treat .container{
+  position: relative;
+  z-index: 3;
+}
+
+/* 좌(설명) + 우(슬라이더) */
 .treat__grid{
   display:grid;
   grid-template-columns: 340px 1fr;
-  gap: 34px;
+  gap: 80px;
   align-items:center;
+  padding: 100px 0 0 0 ;
 }
 
-.section-title--light{
-  color: rgba(255,255,255,.88);
+/* 왼쪽 텍스트 */
+.treat__left .section-title{
+  margin: 0 0 12px;
+  font-family: var(--ff-body);
+  font-weight: 800;
+  font-size: 50px;
+  color: rgba(255,255,255,.95);
 }
 
 .treat__desc{
   margin:0;
   font-family: var(--ff-body);
   font-weight: 400;
-  font-size: 12px;
+  font-size: 20px;
   line-height: 1.9;
   color: rgba(255,255,255,.72);
 }
 
-.treat__right{ position: relative; }
+/* 오른쪽 영역 */
+.treat__right{
+  position: relative;
+  min-width: 0;
+}
 
+/* Swiper */
 .treat-swiper{
   position: relative;
+  width: 1200px;
+  overflow: hidden;     /* ✅ 옆 슬라이드가 잘리지 않게 */
   padding-top: 8px;
-  padding-bottom: 34px;
+  padding-bottom: 52px;
+  padding-right: 6px;
 }
 
+/* 카드 크기 고정(3개 보이도록) */
 .treat-card{
+  width: 365px;                 /* ✅ 3개 딱 보이는 폭 */
   background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 14px;
-  overflow:hidden;
-  padding: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px ;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+/* 이미지 */
 .treat-card img{
-  width:100%;
-  height: 170px;
+  width: 365px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 10px;
+  display:block;
 }
 
+/* 텍스트 영역 패딩 */
 .treat-card h4{
-  margin: 12px 0 6px;
+  margin: 12px 12px 6px;
   font-family: var(--ff-body);
   font-weight: 700;
-  font-size: 14px;
-  color:#fff;
+  font-size: 23px;
+  color: #fff;
 }
 
 .treat-card p{
-  margin:0;
+  margin: 0 12px 14px;
   font-family: var(--ff-body);
   font-weight: 400;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.7;
   color: rgba(255,255,255,.72);
 }
 
-/* nav buttons (top-right like screenshot) */
-.treat-nav{
+/* 화살표(스샷처럼 우측 상단) */
+/* .treat-nav{
   position:absolute;
   right: 0;
-  top: -4px;
+  top: -2px;
   display:flex;
   gap: 10px;
-  z-index: 5;
-}
+  z-index: 10;
+} */
 
-.nav-btn{
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.25);
-  background: rgba(0,0,0,.12);
-  color:#fff;
-  font-size: 22px;
-  line-height: 1;
-  cursor:pointer;
-}
-.nav-btn:hover{ background: rgba(0,0,0,.22); }
 
+/* ✅ pagination을 "긴 바"처럼 */
 .treat-pagination{
-  bottom: 0 !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 14px !important;
+  width: 100% !important;
+  height: 6px !important;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
 }
+
+/* Swiper 기본 bullet을 바 형태로 */
 .treat-pagination .swiper-pagination-bullet{
-  opacity: .35;
-  background: rgba(255,255,255,.65);
-}
-.treat-pagination .swiper-pagination-bullet-active{
+  width: 120px !important;              /* 긴 바 */
+  height: 4px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.28);
   opacity: 1;
-  background: #fff;
+  margin: 0 !important;
 }
+
+/* 활성 바 */
+.treat-pagination .swiper-pagination-bullet-active{
+  background: rgba(255,255,255,.95);
+  color:#0099FF;
+}
+
+
+/* (선택) 카드 hover 시 약간 밝게 */
+.treat-card:hover{
+  border-color: rgba(255,255,255,.25);
+  background: rgba(255,255,255,.08);
+}
+
+
 
 /* =========================
    EQUIP (장비소개 - swiper)
 ========================= */
 .equip{
-  background:#fff;
-  padding: 88px 0 78px;
+
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;          /* 배경 삐져나오는 거 방지 */
+  background: #fff;
+  height: 880px;
+  width: 100%;
+
+}
+
+.equip .section-title{
+  margin: 0 0 12px;
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 50px;
+  color: var(--c-sub2);
+}
+
+.equip_bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;                /* 컨텐츠보다 뒤 */
+  pointer-events: none;
+}
+.equip_bg img{
+  position: absolute;
+  right: -60px;              /* 원하는 만큼 조절 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 760px;              /* 배경 크기 */
+  height: auto;
+  opacity: .12;              /* ✅ 투명도 */
+  filter: grayscale(1);      /* 필요 없으면 삭제 */
+}
+.equip .container{
+  position: relative;
+  z-index: 2;                /* 배경보다 앞 */
 }
 
 .equip-swiper{
   position: relative;
   padding-top: 8px;
   padding-bottom: 42px;
+  
 }
 
 .equip-card{
-  border: 1px solid var(--line-3);
   border-radius: 14px;
   background:#fff;
-  padding: 18px;
+  padding: 30px;
   text-align:center;
   box-shadow: 0 8px 22px rgba(0,0,0,.05);
+  margin-top: 50px;
+  height: 441px;
+
 }
 
 .equip-card img{
-  width: 100%;
-  height: 210px;
+  width: 364px;
+  height: 305px;
   object-fit: contain;
 }
 
@@ -533,8 +706,10 @@ a{ color:inherit; text-decoration:none; }
   margin: 12px 0 0;
   font-family: var(--ff-body);
   font-weight: 700;
-  font-size: 12px;
-  color: var(--c-sub3);
+  font-size: 23px;
+  color: #0067C8;
+  margin-top: 20px;
+
 }
 
 .equip-nav{
@@ -551,13 +726,24 @@ a{ color:inherit; text-decoration:none; }
 
 .equip-nav .nav-btn{
   pointer-events:auto;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--line-3);
-  background: rgba(255,255,255,.92);
+  background: transparent;
   color: var(--t-900);
+  
+
 }
-.equip-nav .nav-btn:hover{ background:#fff; }
+
+.nav-btn{
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.12);
+  color:#fff;
+  font-size: 50px;
+  line-height: 1;
+  cursor:pointer;
+}
+
+
+.equip-nav .nav-btn:hover{ color:#0099FF; }
 
 .equip-pagination{
   bottom: 0 !important;
@@ -566,9 +752,10 @@ a{ color:inherit; text-decoration:none; }
   opacity: .35;
   background: rgba(0,0,0,.25);
 }
+
 .equip-pagination .swiper-pagination-bullet-active{
   opacity: 1;
-  background: var(--c-sub3);
+  color: #0099FF;
 }
 
 /* =========================
@@ -576,12 +763,13 @@ a{ color:inherit; text-decoration:none; }
 ========================= */
 /* INFO2 (screenshot-like layout) */
 .info2{
-  background:#fff;
+  background:#F6F6F6;
   padding: 0;
 }
 
 .info2__wrap{
-  width: 1922px;
+  width: 100%;
+  max-width: 1922px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.25fr;
@@ -590,9 +778,9 @@ a{ color:inherit; text-decoration:none; }
 
 /* LEFT */
 .info2__left{
-  padding: 76px 0 76px;
-  width: 780px;
-  margin-left: 320px; /* 스샷처럼 왼쪽 여백 */
+  padding: 76px 80px 76px 320px;
+  width: auto;
+  margin-left: 0; 
 }
 
 .info2__title{
@@ -733,7 +921,7 @@ a{ color:inherit; text-decoration:none; }
   background: #072e6a;
   color: rgba(255,255,255,.85);
   padding: 34px 0;
-  margin: 0;              /* ✅ */
+  margin: 0; 
 }
 
 .footer__inner{
