@@ -711,53 +711,61 @@ a{ color:inherit; text-decoration:none; }
   margin-top: 20px;
 
 }
-
 .equip-nav{
   position:absolute;
-  left:0;
-  right:0;
-  top: 50%;
+  left:-100px;
+  right:-100px;
+  top: 55%;
   transform: translateY(-50%);
   display:flex;
   justify-content:space-between;
   pointer-events:none;
   z-index: 5;
+  padding: 0 18px; /* 좌우 여백 */
 }
 
+/* 아이콘 버튼 베이스 */
 .equip-nav .nav-btn{
   pointer-events:auto;
+  width: 64px;
+  height:64px;
+  border: 0;
   background: transparent;
-  color: var(--t-900);
-  
+  cursor: pointer;
+  position: relative;
+}
+.equip-nav .nav-btn:hover::before{
+  border-left-color:#0099FF;
+  border-bottom-color: #0099FF;}
 
+
+.equip-nav .nav-btn::before{
+  content:"";
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;              /* 화살표 크기 */
+  height: 18px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-left: 6px solid rgba(0,0,0,.12);   /* 기본: 연한 회색 */
+  border-bottom: 6px solid rgba(0,0,0,.12);
+  border-radius: 2px;       /* 모서리 살짝 둥글 */
 }
 
-.nav-btn{
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.22);
-  background: rgba(0,0,0,.12);
-  color:#fff;
-  font-size: 50px;
-  line-height: 1;
-  cursor:pointer;
+.equip-nav .equip-next::before{
+  transform: translate(-50%, -50%) rotate(-135deg);
 }
 
 
-.equip-nav .nav-btn:hover{ color:#0099FF; }
-
-.equip-pagination{
-  bottom: 0 !important;
+/* (선택) 왼쪽/오른쪽 기본 톤을 스샷처럼 다르게 주고 싶으면 */
+.equip-nav .equip-prev::before{
+  border-left-color: rgba(0,0,0,.10);
+  border-bottom-color: rgba(0,0,0,.10);
 }
-.equip-pagination .swiper-pagination-bullet{
-  opacity: .35;
-  background: rgba(0,0,0,.25);
+.equip-nav .equip-next::before{
+  border-left-color: rgba(0,153,255,.85);
+  border-bottom-color: rgba(0,153,255,.85);
 }
-
-.equip-pagination .swiper-pagination-bullet-active{
-  opacity: 1;
-  color: #0099FF;
-}
-
 /* =========================
    INFO (진료시간/오시는길)
 ========================= */
@@ -872,27 +880,13 @@ a{ color:inherit; text-decoration:none; }
 .info2__ico{
   width: 44px;
   height: 44px;
-  border-radius: 8px;
-  border: 2px solid #111;
-  background: #fff;
   position: relative;
 }
 
-/* 간단한 아이콘 느낌(이미지 없이 CSS로) */
-.info2__ico::after{
-  content:"";
-  position:absolute;
-  inset: 8px;
-  border-radius: 4px;
-  background: #111;
-  opacity: .08;
-}
-.info2__ico--subway{ border-color:#0b0b0b; }
-.info2__ico--bus{ border-color:#0b0b0b; }
-.info2__ico--car{ border-color:#0b0b0b; }
+
 
 .info2__fine{
-  margin-top: 8px;
+  margin-top: 20px;
   font-size: 11px;
   line-height: 1.7;
   color: var(--t-500);
