@@ -611,6 +611,11 @@ a{ color:inherit; text-decoration:none; }
   z-index: 10;
 } */
 
+.info2-day1{
+  letter-spacing:32px;
+}
+.info2-day2{
+  letter-spacing:8px;}
 
 /* ✅ pagination을 "긴 바"처럼 */
 .treat-pagination{
@@ -891,13 +896,16 @@ a{ color:inherit; text-decoration:none; }
   font-size: 20px;
   line-height: 1.7;
   color: var(--t-700);
+  font-weight: 700;
+
 }
 
 .info2__addr-sub{
   margin: 0;
   font-size: 13px;
   line-height: 1.6;
-  color: var(--t-500);
+  color: var(--t-500);  
+ 
 }
 
 /* ROUTE LIST */
