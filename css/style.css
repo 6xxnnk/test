@@ -1,204 +1,332 @@
+/* =========================
+   FONT
+========================= */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+
+
 :root{
-  --w: 1922px;
-  --blue: #0b4aa2;
-  --blue2:#0a2f6f;
-  --sky:#2b7cff;
-  --ink:#111;
-  --muted:#6b7280;
-  --line:#e6eaf2;
-  --bg:#f6f8fc;
-  --radius: 18px;
+  /* canvas */
+  --page-w: 1922px;
+  --page-h: 5532px;
+  --container: 1280px;
+
+  /* brand colors */
+  --c-main: #003A8C;   /* main */
+  --c-sub1: #062B63;   /* sub1 */
+  --c-sub2: #0063B8;   /* sub2 */
+  --c-sub3: #1E7BFF;   /* sub3 (accent blue) */
+  --c-soft: #F3F6FB;   /* hero bg soft */
+
+  /* text colors */
+  --t-900: #191919;
+  --t-700: #404040;
+  --t-500: #919191;
+  --t-sky: #57BCFF;
+  --t-200: #CECECE;
+
+  /* line colors */
+  --line-1: #B3B3B3;
+  --line-2: #C3C3C3;
+  --line-3: #E6ECF6;
+
+  /* fonts */
+  --ff-main: "Nanum Gothic", Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  --ff-body: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+
+  /* radius */
+  --r-10: 10px;
+  --r-12: 12px;
+  --r-16: 16px;
+  --r-20: 20px;
+
+  /* shadow */
+  --shadow-sm: 0 6px 18px rgba(0,0,0,.06);
 }
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
+/* =========================
+   RESET / BASE
+========================= */
+*{ box-sizing: border-box; }
+html, body{ margin:0; padding:0; }
 body{
-  margin:0;
-  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--ink);
+  font-family: var(--ff-body);
+  color: var(--t-900);
   background:#fff;
 }
 
 .wrap{
-  width: var(--w);
+  width: var(--page-w);
+  min-height: var(--page-h);
   margin: 0 auto;
-  min-height: 5532px; /* 요청하신 전체 기준 높이 */
   overflow: hidden;
 }
 
 .container{
-  width: 1280px;
+  width: var(--container);
   margin: 0 auto;
 }
 
+img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 
-/* HEADER */
+/* =========================
+   TYPOGRAPHY (guide-based)
+========================= */
+.typo-hero{
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 74px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.typo-body{
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+.typo-body2{
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* =========================
+   HEADER (screenshot style)
+========================= */
 .header{
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   background: rgba(255,255,255,.92);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-3);
 }
+
 .header__inner{
-  height: 78px;
-  width: 1280px;
+  width: var(--container);
+  height: 76px;
   margin: 0 auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
+
 .brand{ display:flex; align-items:center; gap:10px; }
-.brand__logo{ height: 34px; width:auto; display:block; }
+.brand__logo{ height: 34px; width:auto; }
 
 .gnb{
   display:flex;
-  gap: 34px;
-  font-size: 15px;
-  color:#1f2a44;
+  align-items:center;
+  gap: 44px;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--t-700);
 }
+
 .gnb a{
-  padding: 10px 0;
   position: relative;
+  padding: 10px 0;
 }
+.gnb a:hover{ color: var(--c-sub3); }
 .gnb a::after{
   content:"";
   position:absolute;
-  left:0;
-  bottom:4px;
-  width:0;
-  height:2px;
-  background: var(--sky);
-  transition: width .25s ease;
+  left:0; bottom: 6px;
+  width:0; height:2px;
+  background: var(--c-sub3);
+  transition: width .2s ease;
 }
 .gnb a:hover::after{ width:100%; }
 
-/* HERO */
+/* =========================
+   HERO (match screenshot)
+========================= */
 .hero{
-  height: 560px;
-  background: var(--bg);
-  position: relative;
+  height: 420px;
+  background: var(--c-soft);
 }
-.hero .swiper{ height: 560px; }
+
+.hero .swiper{
+  width: 100%;
+  height: 420px;
+}
+
+.hero .swiper-wrapper{ width:100%; }
+.hero .swiper-slide{ width:100% !important; }
+
 .hero-slide{
   position: relative;
-  height: 560px;
+  height: 420px;
+  overflow: hidden;
 }
+
 .hero-slide__bg{
   position:absolute;
   inset:0;
 }
+
 .hero-slide__bg img{
   width:100%;
   height:100%;
   object-fit: cover;
-  filter: saturate(0.9);
+  object-position: right center;
+  filter: saturate(.92) brightness(1.05);
 }
+
 .hero-slide__bg::after{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.82) 40%, rgba(255,255,255,.12) 100%);
+  background:
+    linear-gradient(90deg,
+      rgba(244,247,252,1) 0%,
+      rgba(244,247,252,.97) 38%,
+      rgba(244,247,252,.65) 58%,
+      rgba(244,247,252,.08) 82%,
+      rgba(244,247,252,0) 100%
+    );
 }
+
 .hero-slide__content{
   position: relative;
+  width: var(--container);
   height:100%;
-  width: 1280px;
   margin: 0 auto;
+  padding-left: 70px; /* screenshot-like left inset */
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding: 0 20px;
-}
-.hero-kicker{
-  margin:0 0 14px;
-  font-size: 13px;
-  letter-spacing:.08em;
-  color:#6a7aa6;
-}
-.hero-title{
-  margin:0 0 18px;
-  font-size: 54px;
-  line-height: 1.08;
-  font-weight: 800;
-  color: var(--sky);
-}
-.hero-desc{
-  margin:0;
-  font-size: 15px;
-  color:#3b445a;
+  gap: 12px;
 }
 
+.hero-kicker{
+  margin:0;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: .12em;
+  color: rgba(0,0,0,.18);
+}
+
+.hero-title{
+  margin:0;
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 1.12;
+  letter-spacing: 0;
+  color: var(--c-sub3);
+}
+
+.hero-desc{
+  margin:0;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(0,0,0,.55);
+}
+
+/* hero pagination: 3 dots under text (left) */
 .hero-pagination{
   position:absolute !important;
-  left: calc((100% - 1280px)/2 + 20px) !important;
-  bottom: 40px !important;
+  left: calc((100% - var(--container))/2 + 70px) !important;
+  bottom: 92px !important;
   width: auto !important;
 }
+
 .hero-pagination .swiper-pagination-bullet{
   width: 6px;
   height: 6px;
-  opacity: .35;
+  margin: 0 4px !important;
+  background: rgba(0,0,0,.25);
+  opacity: 1;
 }
 .hero-pagination .swiper-pagination-bullet-active{
-  opacity: 1;
-  transform: scale(1.2);
+  background: var(--c-sub3);
 }
 
-/* SECTIONS */
-.section{ padding: 92px 0; }
+/* =========================
+   COMMON SECTION
+========================= */
+.section{
+  padding: 88px 0;
+}
+
 .section-title{
-  margin:0 0 18px;
+  margin: 0 0 18px;
+  font-family: var(--ff-main);
+  font-weight: 800;
   font-size: 28px;
-  font-weight: 800;
-  color: var(--sky);
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--c-sub3);
 }
-.section-title--light{ color:#8fb6ff; }
-.section-headline{
-  margin:0 0 14px;
-  font-size: 22px;
-  line-height:1.45;
-  font-weight: 800;
-  color:#1a2440;
-}
-.section-body{
-  margin:0;
-  font-size: 14px;
-  line-height:1.85;
-  color:#4b5563;
-}
+
 .center{ text-align:center; }
 
-/* ABOUT */
+/* =========================
+   ABOUT (병원소개 - screenshot vibe)
+========================= */
 .about{
   background:#fff;
 }
+
 .about__grid{
   display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: 40px;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 44px;
   align-items:center;
 }
-.about__visual{
-  border-radius: var(--radius);
-  overflow:hidden;
-  border: 1px solid var(--line);
-  background:#fff;
-}
-.about__visual img{
-  width:100%;
-  height: 360px;
-  object-fit: cover;
-  display:block;
+
+.section-headline{
+  margin: 0 0 14px;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--t-900);
 }
 
-/* DOCTORS */
+.section-body{
+  margin:0;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--t-500);
+}
+
+.about__visual{
+  border-radius: var(--r-16);
+  overflow:hidden;
+  border: 1px solid var(--line-3);
+  background:#fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.about__visual img{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* =========================
+   DOCTORS (의료진소개 - screenshot vibe)
+========================= */
 .doctors{
   position: relative;
-  background: #fff;
+  background:#fff;
+  padding-bottom: 70px;
 }
+
 .doctors__grid{
   position: relative;
   display:grid;
@@ -206,39 +334,55 @@ a{ color:inherit; text-decoration:none; }
   gap: 22px;
   align-items:center;
 }
+
 .doctor-name{
-  margin: 4px 0 18px;
-  font-size: 18px;
-  line-height: 1.5;
-  color:#1a2440;
+  margin: 6px 0 18px;
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--t-700);
 }
+
 .doctor-name strong{
+  display:inline-block;
+  margin-top: 6px;
+  font-family: var(--ff-main);
+  font-weight: 800;
   font-size: 22px;
-  color:#111;
+  color: var(--t-900);
 }
+
 .doctor-profile h4{
   margin: 18px 0 8px;
-  font-size: 15px;
-  color:#1f2a44;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--t-700);
 }
+
 .doctor-profile ul{
   margin:0;
-  padding-left: 18px;
-  color:#4b5563;
-  line-height:1.8;
-  font-size: 14px;
+  padding-left: 16px;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--t-500);
 }
+
 .doctors__photo{
   position: relative;
   display:flex;
   justify-content:flex-end;
   z-index:2;
 }
+
 .doctors__photo img{
-  width: 480px;
+  width: 470px;
   height:auto;
-  display:block;
 }
+
 .doctors__accent{
   position:absolute;
   right:-260px;
@@ -246,148 +390,231 @@ a{ color:inherit; text-decoration:none; }
   transform: translateY(-50%);
   width: 820px;
   height: 420px;
-  background: linear-gradient(135deg, rgba(43,124,255,.18), rgba(11,74,162,.0));
+  background: linear-gradient(135deg, rgba(87,188,255,.28), rgba(30,123,255,0));
   border-radius: 999px;
-  filter: blur(0px);
   z-index:1;
+  pointer-events:none;
 }
 
-/* TREAT (dark) */
+/* =========================
+   TREAT (진료소개 - dark section + swiper)
+========================= */
 .treat{
-  background: linear-gradient(180deg, var(--blue2) 0%, #041a44 100%);
-  color:#eaf0ff;
-  padding: 78px 0 86px;
+  background: linear-gradient(180deg, var(--c-sub1) 0%, #041a44 100%);
+  color: #eaf0ff;
+  padding: 74px 0 78px;
 }
+
 .treat__grid{
   display:grid;
   grid-template-columns: 340px 1fr;
   gap: 34px;
   align-items:center;
 }
+
+.section-title--light{
+  color: rgba(255,255,255,.88);
+}
+
 .treat__desc{
   margin:0;
-  color: rgba(255,255,255,.78);
-  font-size: 14px;
-  line-height: 1.8;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.9;
+  color: rgba(255,255,255,.72);
 }
+
+.treat__right{ position: relative; }
+
 .treat-swiper{
+  position: relative;
+  padding-top: 8px;
   padding-bottom: 34px;
 }
+
 .treat-card{
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.12);
-  border-radius: 16px;
+  border-radius: 14px;
   overflow:hidden;
   padding: 14px;
 }
+
 .treat-card img{
   width:100%;
-  height: 180px;
+  height: 170px;
   object-fit: cover;
-  border-radius: 12px;
-  display:block;
-}
-.treat-card h4{
-  margin: 14px 0 6px;
-  font-size: 16px;
-  color:#fff;
-}
-.treat-card p{
-  margin:0;
-  font-size: 13px;
-  line-height:1.6;
-  color: rgba(255,255,255,.75);
+  border-radius: 10px;
 }
 
-.treat-nav,
-.equip-nav{
+.treat-card h4{
+  margin: 12px 0 6px;
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 14px;
+  color:#fff;
+}
+
+.treat-card p{
+  margin:0;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.72);
+}
+
+/* nav buttons (top-right like screenshot) */
+.treat-nav{
   position:absolute;
-  right: 6px;
-  top: 8px;
+  right: 0;
+  top: -4px;
   display:flex;
-  gap:10px;
+  gap: 10px;
   z-index: 5;
 }
+
 .nav-btn{
   width: 38px;
   height: 38px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.25);
-  background: rgba(0,0,0,.15);
+  background: rgba(0,0,0,.12);
   color:#fff;
   font-size: 22px;
   line-height: 1;
   cursor:pointer;
 }
-.nav-btn:hover{ background: rgba(0,0,0,.28); }
+.nav-btn:hover{ background: rgba(0,0,0,.22); }
 
-.treat-pagination .swiper-pagination-bullet,
-.equip-pagination .swiper-pagination-bullet{
-  opacity:.35;
+.treat-pagination{
+  bottom: 0 !important;
 }
-.treat-pagination .swiper-pagination-bullet-active,
-.equip-pagination .swiper-pagination-bullet-active{
-  opacity:1;
+.treat-pagination .swiper-pagination-bullet{
+  opacity: .35;
+  background: rgba(255,255,255,.65);
+}
+.treat-pagination .swiper-pagination-bullet-active{
+  opacity: 1;
+  background: #fff;
 }
 
-/* EQUIP */
+/* =========================
+   EQUIP (장비소개 - swiper)
+========================= */
 .equip{
   background:#fff;
+  padding: 88px 0 78px;
 }
+
 .equip-swiper{
-  padding: 10px 0 38px;
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 42px;
 }
+
 .equip-card{
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  border: 1px solid var(--line-3);
+  border-radius: 14px;
   background:#fff;
   padding: 18px;
   text-align:center;
+  box-shadow: 0 8px 22px rgba(0,0,0,.05);
 }
+
 .equip-card img{
   width: 100%;
   height: 210px;
   object-fit: contain;
-  display:block;
 }
+
 .equip-name{
   margin: 12px 0 0;
-  font-size: 14px;
+  font-family: var(--ff-body);
   font-weight: 700;
-  color: var(--sky);
+  font-size: 12px;
+  color: var(--c-sub3);
 }
-.equip-nav .nav-btn{
-  border: 1px solid var(--line);
-  background: #fff;
-  color:#111;
-}
-.equip-nav .nav-btn:hover{ background: #f3f6ff; }
 
-/* INFO */
-.info{
-  background: #fff;
-  padding-bottom: 70px;
+.equip-nav{
+  position:absolute;
+  left:0;
+  right:0;
+  top: 50%;
+  transform: translateY(-50%);
+  display:flex;
+  justify-content:space-between;
+  pointer-events:none;
+  z-index: 5;
 }
+
+.equip-nav .nav-btn{
+  pointer-events:auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-3);
+  background: rgba(255,255,255,.92);
+  color: var(--t-900);
+}
+.equip-nav .nav-btn:hover{ background:#fff; }
+
+.equip-pagination{
+  bottom: 0 !important;
+}
+.equip-pagination .swiper-pagination-bullet{
+  opacity: .35;
+  background: rgba(0,0,0,.25);
+}
+.equip-pagination .swiper-pagination-bullet-active{
+  opacity: 1;
+  background: var(--c-sub3);
+}
+
+/* =========================
+   INFO (진료시간/오시는길)
+========================= */
+.info{
+  background:#fff;
+  padding: 78px 0 0; /* ✅ footer 밑 여백 안 생기게 아래는 0으로 */
+}
+
 .info__grid{
   display:grid;
   grid-template-columns: 520px 1fr;
   gap: 34px;
   align-items:flex-start;
+  padding-bottom: 50px; /* 컨텐츠 마감만 */
+  border-bottom: 1px solid var(--line-3);
 }
+
 .time{
   margin: 10px 0 22px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line-3);
+  border-bottom: 1px solid var(--line-3);
   padding: 14px 0;
 }
+
 .time > div{
   display:grid;
   grid-template-columns: 90px 1fr;
   gap: 14px;
   padding: 10px 0;
 }
-.time dt{ font-weight: 800; color:#1a2440; }
-.time dd{ margin:0; color:#4b5563; }
+
+.time dt{
+  font-family: var(--ff-body);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--t-700);
+}
+.time dd{
+  margin:0;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--t-500);
+}
 
 .contact{
   display:flex;
@@ -395,25 +622,34 @@ a{ color:inherit; text-decoration:none; }
   gap: 12px;
   margin-bottom: 22px;
 }
+
 .tel-label{
   margin:0;
-  color: var(--sky);
-  font-weight: 900;
-}
-.tel{
-  margin:0;
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--sky);
+  font-family: var(--ff-body);
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--c-sub3);
 }
 
-.mt32{ margin-top:32px; }
+.tel{
+  margin:0;
+  font-family: var(--ff-main);
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--c-sub3);
+}
+
+.mt32{ margin-top: 32px; }
+
 .addr{
   margin: 0 0 14px;
-  color:#4b5563;
-  line-height:1.8;
-  font-size: 14px;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--t-500);
 }
+
 .way{
   margin:0;
   padding-left: 0;
@@ -421,9 +657,11 @@ a{ color:inherit; text-decoration:none; }
   display:flex;
   flex-direction:column;
   gap: 10px;
-  color:#4b5563;
-  font-size: 14px;
+  font-family: var(--ff-body);
+  font-size: 13px;
+  color: var(--t-500);
 }
+
 .badge{
   display:inline-flex;
   align-items:center;
@@ -431,41 +669,58 @@ a{ color:inherit; text-decoration:none; }
   padding: 0 10px;
   border-radius: 999px;
   background: #eef4ff;
-  color: var(--sky);
+  color: var(--c-sub3);
   font-weight: 800;
   margin-right: 10px;
   border: 1px solid #dbe7ff;
+  font-size: 12px;
 }
 
 .map{
-  border-radius: var(--radius);
+  border-radius: var(--r-16);
   overflow:hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-3);
   background:#fff;
+  box-shadow: var(--shadow-sm);
 }
+
 .map img{
   width:100%;
   height: 360px;
   object-fit: cover;
-  display:block;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER (no bottom gap)
+========================= */
 .footer{
   background: #072e6a;
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.85);
   padding: 34px 0;
+  margin: 0;              /* ✅ */
 }
+
 .footer__inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap: 18px;
 }
-.footer__logo{ height: 34px; width:auto; }
+
+.footer__logo{
+  height: 34px;
+  width:auto;
+}
+
 .footer__txt{
   margin:0;
+  font-family: var(--ff-body);
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.8;
   text-align:right;
 }
+
+/* ✅ footer 아래 여백 완전 차단 */
+footer, .footer{ padding-bottom: 34px; margin-bottom: 0; }
+body{ padding-bottom: 0; }

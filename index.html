@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <!-- ✅ 1922px 고정 작업이면 이렇게(네가 원한 캔버스 기반) -->
+  <meta name="viewport" content="width=1922, initial-scale=1" />
+  <title>사상튼튼정형외과</title>
+
+  <!-- ✅ Swiper CSS (필수) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
-    <div class="wrap" id="top">
+  <div class="wrap" id="top">
+
     <!-- HEADER -->
     <header class="header">
       <div class="header__inner">
@@ -30,16 +35,17 @@
     <section class="hero">
       <div class="swiper hero-swiper">
         <div class="swiper-wrapper">
+
           <!-- slide 1 -->
           <div class="swiper-slide hero-slide">
             <div class="hero-slide__bg">
-              <img src="./img/hero-1.jpg" alt="" />
+              <img src="./img/hero-1.png" alt="" />
             </div>
             <div class="hero-slide__content">
               <p class="hero-kicker">Sasang Teunteun Orthopedics Clinic</p>
               <h1 class="hero-title">
-                아픔의 원인을<br/>
-                찾아 빠르게<br/>
+                아픔의 원인을<br />
+                찾아 빠르게<br />
                 이루어지는 회복
               </h1>
               <p class="hero-desc">
@@ -51,12 +57,12 @@
           <!-- slide 2 -->
           <div class="swiper-slide hero-slide">
             <div class="hero-slide__bg">
-              <img src="./img/hero-2.jpg" alt="" />
+              <img src="./img/hero-2.png" alt="" />
             </div>
             <div class="hero-slide__content">
               <p class="hero-kicker">Sasang Teunteun Orthopedics Clinic</p>
               <h2 class="hero-title">
-                정형외과 전문의<br/>
+                정형외과 전문의<br />
                 체계적인 통증 케어
               </h2>
               <p class="hero-desc">
@@ -68,12 +74,12 @@
           <!-- slide 3 -->
           <div class="swiper-slide hero-slide">
             <div class="hero-slide__bg">
-              <img src="./img/hero-3.jpg" alt="" />
+              <img src="./img/hero-3.png" alt="" />
             </div>
             <div class="hero-slide__content">
               <p class="hero-kicker">Sasang Teunteun Orthopedics Clinic</p>
               <h2 class="hero-title">
-                정확한 진단 ·<br/>
+                정확한 진단 ·<br />
                 개인 맞춤 치료
               </h2>
               <p class="hero-desc">
@@ -81,9 +87,11 @@
               </p>
             </div>
           </div>
+
         </div>
 
-        <div class="hero-pagination swiper-pagination"></div>
+        <!-- pagination -->
+        <div class="swiper-pagination hero-pagination"></div>
       </div>
     </section>
 
@@ -93,12 +101,12 @@
         <div class="about__text">
           <h3 class="section-title">병원 소개</h3>
           <p class="section-headline">
-            사상튼튼정형외과는 바른 진단과 치료로<br/>
+            사상튼튼정형외과는 바른 진단과 치료로<br />
             환자분들의 통증과 불편을 해소하는 데 집중합니다.
           </p>
           <p class="section-body">
             대학병원 수련과 다양한 임상 경험을 갖춘 정형외과 전문의가
-            정확한 진단, 체계적인 치료로 회복을 돕습니다.<br/>
+            정확한 진단, 체계적인 치료로 회복을 돕습니다.<br />
             환자 개개인에게 가장 적합한 방법으로 치료하는 사상튼튼정형외과가 되겠습니다.
           </p>
         </div>
@@ -115,7 +123,7 @@
         <div class="doctors__text">
           <h3 class="section-title">의료진 소개</h3>
           <p class="doctor-name">
-            정형외과 전문의<br/>
+            정형외과 전문의<br />
             대표원장 <strong>서 현 제</strong>
           </p>
 
@@ -157,6 +165,7 @@
         <div class="treat__right">
           <div class="swiper treat-swiper">
             <div class="swiper-wrapper">
+
               <div class="swiper-slide treat-card">
                 <img src="./img/treat-1.jpg" alt="척추/관절 치료" />
                 <h4>척추/관절 치료</h4>
@@ -174,14 +183,15 @@
                 <h4>체형·근력 재활</h4>
                 <p>회복 이후 재발 방지까지 설계합니다.</p>
               </div>
+
             </div>
 
             <div class="treat-nav">
-              <button class="nav-btn treat-prev" aria-label="이전">‹</button>
-              <button class="nav-btn treat-next" aria-label="다음">›</button>
+              <button type="button" class="nav-btn treat-prev" aria-label="이전">‹</button>
+              <button type="button" class="nav-btn treat-next" aria-label="다음">›</button>
             </div>
 
-            <div class="treat-pagination swiper-pagination"></div>
+            <div class="swiper-pagination treat-pagination"></div>
           </div>
         </div>
       </div>
@@ -194,6 +204,7 @@
 
         <div class="swiper equip-swiper">
           <div class="swiper-wrapper">
+
             <div class="swiper-slide equip-card">
               <img src="./img/equip-1.png" alt="삼성 메디슨 V6 초음파 장비" />
               <p class="equip-name">삼성 메디슨 V6 초음파 장비</p>
@@ -209,19 +220,19 @@
               <p class="equip-name">Zeus Wave ESWT(체외충격파)</p>
             </div>
 
-            <!-- 필요하면 더 추가 -->
             <div class="swiper-slide equip-card">
               <img src="./img/equip-4.png" alt="추가 장비" />
               <p class="equip-name">추가 장비</p>
             </div>
+
           </div>
 
           <div class="equip-nav">
-            <button class="nav-btn equip-prev" aria-label="이전">‹</button>
-            <button class="nav-btn equip-next" aria-label="다음">›</button>
+            <button type="button" class="nav-btn equip-prev" aria-label="이전">‹</button>
+            <button type="button" class="nav-btn equip-next" aria-label="다음">›</button>
           </div>
 
-          <div class="equip-pagination swiper-pagination"></div>
+          <div class="swiper-pagination equip-pagination"></div>
         </div>
       </div>
     </section>
@@ -254,7 +265,7 @@
 
           <h3 class="section-title mt32">오시는 길</h3>
           <p class="addr">
-            부산광역시 사상구 사상로204 3층<br/>
+            부산광역시 사상구 사상로204 3층<br />
             사상역(2호선) 6번 출구 도보 4분
           </p>
 
@@ -267,7 +278,6 @@
 
         <div class="info__right">
           <div class="map">
-            <!-- 실제 적용 시 구글/카카오 지도 iframe로 교체 -->
             <img src="./img/map.png" alt="지도 이미지" />
           </div>
         </div>
@@ -279,12 +289,15 @@
       <div class="container footer__inner">
         <img src="./img/logo-white.png" alt="사상튼튼정형외과" class="footer__logo" />
         <p class="footer__txt">
-          개인정보처리방침 | 이용약관 | 비급여수가<br/>
+          개인정보처리방침 | 이용약관 | 비급여수가<br />
           COPYRIGHT © 2025 SASANG TEUNTEUN ORTHOPEDICS. ALL RIGHT RESERVED.
         </p>
       </div>
     </footer>
+
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/swiper.js"></script>
 </body>
 </html>

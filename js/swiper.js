@@ -1,8 +1,10 @@
 // js/swiper.js
-
 document.addEventListener("DOMContentLoaded", () => {
-  // HERO (3 slides)
+  // HERO (3 slides) - 화면에 1개씩만
   new Swiper(".hero-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    slidesPerGroup: 1,
     loop: true,
     speed: 700,
     autoplay: {
@@ -15,12 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 진료소개
+  // 진료소개 - 화면에 1개씩만
   new Swiper(".treat-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 22,
+    slidesPerGroup: 1,
     loop: true,
     speed: 600,
-    slidesPerView: 3,
-    spaceBetween: 22,
     navigation: {
       nextEl: ".treat-next",
       prevEl: ".treat-prev"
@@ -28,20 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination: {
       el: ".treat-pagination",
       clickable: true
-    },
-    breakpoints: {
-      0:   { slidesPerView: 1.15 },
-      834: { slidesPerView: 2.2 },
-      1200:{ slidesPerView: 3 }
     }
   });
 
-  // 장비소개
+  // 장비소개 - 화면에 1개씩만
   new Swiper(".equip-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 22,
+    slidesPerGroup: 1,
     loop: true,
     speed: 600,
-    slidesPerView: 3,
-    spaceBetween: 22,
     navigation: {
       nextEl: ".equip-next",
       prevEl: ".equip-prev"
@@ -49,11 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination: {
       el: ".equip-pagination",
       clickable: true
-    },
-    breakpoints: {
-      0:   { slidesPerView: 1.2 },
-      834: { slidesPerView: 2.3 },
-      1200:{ slidesPerView: 3 }
     }
   });
 });
