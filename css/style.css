@@ -320,7 +320,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .about3__headline{
-  margin: 50px 0 14px;
+  margin: 60px 0 14px;
   font-weight: 800;
   font-size: 32px;
   line-height: 1.5;
@@ -328,7 +328,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .about3__body{
-  margin: 0;
+  margin: 10ㅔㅌ;
   font-size: 20px;
   line-height: 1.3;
   color: rgba(25,25,25,.55);
@@ -462,40 +462,47 @@ a{ color:inherit; text-decoration:none; }
 ========================= */
 .treat{
   position: relative;
-  background: linear-gradient(180deg, #002b73 0%, #041a44 100%);
+  background: linear-gradient(
+      180deg,
+      #001F60 0%,
+      #002f86 35%,   /* 🔹 기존보다 살짝 밝은 블루 */
+      #00276f 55%,
+      #041a44 100%
+    );
   color:#eaf0ff;
   padding: 86px 0 86px;
   overflow: hidden;
   height: 880px;
 }
 
-/* 중앙 큰 타이틀(섹션 위) */
-/* .treat::before{
-  content: "진료 소개";
-  position: absolute;
-  top: 38px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--ff-main);
-  font-weight: 800;
-  font-size: 26px;
-  letter-spacing: -0.01em;
-  color: rgba(255,255,255,.95);
-  z-index: 2;
+/* 은은한 광원 느낌 (위쪽) */
+.treat::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255,255,255,.12) 0%,
+      rgba(255,255,255,.06) 25%,
+      rgba(255,255,255,0) 55%
+    );
+  z-index: 0;
+  opacity: .8; 
+  background-blend-mode: overlay;
 }
- */
 
 .treat::after{
   content:"";
   position:absolute;
   inset:0;
-  background: radial-gradient(ellipse at 30% 10%,
-      rgba(255,255,255,.10) 0%,
-      rgba(255,255,255,0) 55%),
-    radial-gradient(ellipse at 80% 30%,
-      rgba(0,0,0,.25) 0%,
-      rgba(0,0,0,0) 60%);
-  opacity: .35;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.18) 70%,
+      rgba(0,0,0,.35) 100%
+    );
   z-index: 0;
 }
 
