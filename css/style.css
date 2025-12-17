@@ -487,6 +487,7 @@ a{ color:inherit; text-decoration:none; }
   display: block;
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 /* 1) 배경 이미지 */
 .treat__bg::before{
@@ -1259,6 +1260,62 @@ body{
   .info2__addr{ font-size: 16px; }
   .info2__route li{ font-size: 13px; }
   .info2__ico{ width: 44px; height: 44px; }
+
+   .header__inner{
+    width: 100%;
+    padding: 0 18px;
+    height: 72px;           /* 모바일 헤더 높이 줄이면 더 예쁨 */
+  }
+
+  .brand__logo{ height: 46px; }
+
+  .gnb{ display:none; }     /* ✅ 모바일에서 GNB 숨김 */
+
+  .menu-btn{
+    display: inline-flex;   /* ✅ 햄버거 보이기 */
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .menu-btn__line{
+    width: 22px;
+    height: 2px;
+    background: var(--t-900);
+    border-radius: 999px;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  /* 패널 위치도 헤더 높이에 맞춰 수정 */
+  .mnav{
+    display:block;
+    top: 72px;
+  }
+
+  /* ✅ 열렸을 때 */
+  body.menu-open .mnav{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ✅ 햄버거 -> X 애니메이션 */
+  body.menu-open .menu-btn__line:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  body.menu-open .menu-btn__line:nth-child(2){
+    opacity: 0;
+  }
+  body.menu-open .menu-btn__line:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
 }
 
 /* =========================
@@ -1460,14 +1517,21 @@ body{
     gap: 5px;
     align-items: flex-start;
   }
-
+ .info2__label{
+   width: auto !important;   /* ✅ 140px 고정 해제 */
+    flex: none !important;    /* ✅ flex:0 0 140px 해제 */
+    margin: 0 0 6px !important;
+    line-height: 1.2;
+    display: inline-block;    /* ✅ 내용만큼만 영역 */
+    padding: 0;               /* 혹시 있으면 제거 */
+  }
   /* 각 줄(p): 라벨(b) 위 / 시간(span) 아래 */
   .info2__content p{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
-    margin: 0 0 14px;
+      margin-bottom: 12px; 
     white-space: normal; /* 기존 nowrap 무력화 */
   }
 
@@ -1476,7 +1540,9 @@ body{
     width: auto !important;
     letter-spacing: 0 !important; /* 모바일에서 글자 벌어짐 방지 */
   }
-
+  .info2__fine {
+   text-align: center;
+  }
   /* 시간 줄 */
   .info2__content .info-time{
     display: block;
@@ -1492,3 +1558,38 @@ body{
   .footer__copyright{ font-size: 11px;
   padding: 0 40px; }
 
+.menu-btn{ display:none; }
+
+/* 모바일 메뉴 패널 기본 숨김 */
+.mnav{
+  display:none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 109px;               /* header 높이랑 맞춤 */
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-3);
+  z-index: 99;
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.mnav__inner{
+  width: var(--container);
+  margin: 0 auto;
+  padding: 18px 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mnav__inner a{
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--t-900);
+  padding: 10px 0;
+}

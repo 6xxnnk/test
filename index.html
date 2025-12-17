@@ -28,7 +28,26 @@
           <a href="#equip">장비소개</a>
           <a href="#info">진료시간 및 오시는길</a>
         </nav>
+
+      <button class="menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false">
+      <span class="menu-btn__line"></span>
+      <span class="menu-btn__line"></span>
+      <span class="menu-btn__line"></span>
+    </button>
+  </div>
+
+  <!-- ✅ 모바일 메뉴 패널 -->
+  <div class="mnav" aria-hidden="true">
+    <nav class="mnav__inner" aria-label="모바일 메뉴">
+      <a href="#about">병원소개</a>
+      <a href="#doctors">의료진</a>
+      <a href="#treat">진료소개</a>
+      <a href="#equip">장비소개</a>
+      <a href="#info2">오시는길</a>
+    </nav>
+  </div>
       </div>
+      
     </header>
 
     <!-- HERO (Swiper 3 slides) -->
@@ -421,6 +440,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/swiper.js"></script>
+  <script src="./js/menu.js"></script>
 
 </body>
 </html>
