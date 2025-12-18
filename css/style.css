@@ -1341,10 +1341,10 @@ body{
     padding-right: 18px;
   }
   .hero-kicker{ font-size: 11px; }
-  .hero-title{ font-size: 36px; line-height: 1.12; }
+  .hero-title{ font-size: 33px; line-height: 1.12; }
   .hero-desc{ 
     font-size: 15px;
-    padding: 0 130px 0 0;}
+    padding: 0 110px 0 0}
 
   .hero-pagination{
     left: calc((100% - var(--container))/2 + 18px) !important;
@@ -1393,61 +1393,87 @@ body{
 
   }
 
-  /* TREAT */
+/* =========================
+   Treat - Mobile (≤480px)
+   ========================= */
+@media (max-width: 480px){
+
   .treat{
     height: auto;
-    padding: 64px 0 70px;
+    padding: 56px 0 64px;
   }
 
-  /* 모바일: 텍스트 위 + 슬라이더 아래 */
   .treat__grid{
     grid-template-columns: 1fr;
-    gap: 26px;
-    padding-top: 70px;
+    gap: 24px;
+    padding-top: 48px;
   }
 
+  /* 왼쪽 텍스트 */
   .treat__left .section-title{
-    font-size: 30px;
-    text-align: left;
+    font-size: 28px;
+    line-height: 1.25;
+    margin-bottom: 8px;
   }
 
   .treat__desc{
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.75;
   }
 
-  /* ✅ 핵심 1: Swiper 폭 고정 해제 */
+  /* Swiper 영역 */
   .treat-swiper{
     width: 100%;
-    overflow: visible;         /* ✅ 옆 슬라이드가 살짝 보이게 */
     padding-right: 0;
-    padding-bottom: 46px;
+    padding-bottom: 28px;
   }
 
-  /* ✅ 핵심 2: 카드 width 고정 해제 → 1.3개 보이게 */
-  .treat-swiper .swiper-slide{
-    height: 350px;
-
-  }
-
+  /* 카드: 1장 중심 + 다음 카드 살짝 노출 */
   .treat-card{
     width: 100%;
-    border-radius: 12px;
+    max-width: none;
+    border-radius: 14px;
+    height: 300px;
   }
 
   .treat-card img{
     width: 100%;
-    height: 220px;
+    height: 210px;
     object-fit: cover;
   }
 
   .treat-card h4{
-    font-size: 18px;
+    font-size: 17px;
+    margin: 10px 12px 4px;
   }
 
   .treat-card p{
     font-size: 13px;
-    padding: 0 10px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding: 0 23px ;
+
   }
+
+  /* pagination bar */
+  .treat-pagination{
+    bottom: 8px !important;
+    gap: 6px;
+  }
+
+  .treat-pagination .swiper-pagination-bullet{
+    width: 52px !important;
+    height: 3px !important;
+  }
+
+  /* 자간 과도한 부분 조정 */
+  .info2-day1{ letter-spacing: 8px; }
+  .info2-day2{ letter-spacing: 3px; }
+
+  /* PC 전용 숨김 */
+  .only-pc{ display: none; }
+}
+
 
   
   .only-pc{ display: none; }
@@ -1554,39 +1580,3 @@ body{
   .footer__links a{ font-size: 12px; }
   .footer__copyright{ font-size: 11px;
   padding: 0 40px; }
-
-.menu-btn{ display:none; }
-
-/* 모바일 메뉴 패널 기본 숨김 */
-.mnav{
-  display:none;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 109px;               /* header 높이랑 맞춤 */
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line-3);
-  z-index: 99;
-  transform: translateY(-12px);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform .2s ease, opacity .2s ease;
-}
-
-.mnav__inner{
-  width: var(--container);
-  margin: 0 auto;
-  padding: 18px 0 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.mnav__inner a{
-  font-family: var(--ff-body);
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--t-900);
-  padding: 10px 0;
-}

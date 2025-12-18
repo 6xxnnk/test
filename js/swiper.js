@@ -29,23 +29,55 @@ document.addEventListener("DOMContentLoaded", () => {
     observeParents: true,
     // ✅ 이미지/폰트 로딩 영향 줄이기
     preloadImages: false,
-    lazy: true
+    lazy: true,
+     breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 14,
+      centeredSlides: false
+    },
+    481: {
+      slidesPerView: 2.5,
+      spaceBetween: 18,
+      centeredSlides: false
+    },
+
+     1025: {
+      slidesPerView: 3.2,
+      spaceBetween: 22
+    }
+  }
   });
 
   // EQUIP
-  const equipSwiper = new Swiper(".equip-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 22,
-    slidesPerGroup: 1,
-    loop: true,
-    speed: 600,
-    navigation: { nextEl: ".equip-next", prevEl: ".equip-prev" },
-    pagination: { el: ".equip-pagination", clickable: true },
-    watchOverflow: true,
-    observer: true,
-    observeParents: true,
-    preloadImages: false,
-    lazy: true
-  });
+// EQUIP - PC는 3개, 모바일(<=480)는 1개
+const equipSwiper = new Swiper(".equip-swiper", {
+  slidesPerView: 3,
+  spaceBetween: 22,
+  slidesPerGroup: 1,
+  loop: true,
+  speed: 600,
+  navigation: { nextEl: ".equip-next", prevEl: ".equip-prev" },
+  pagination: { el: ".equip-pagination", clickable: true },
+  watchOverflow: true,
+  observer: true,
+  observeParents: true,
+  preloadImages: false,
+  lazy: true,
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 14,
+      centeredSlides: false
+    },
+    481: {
+      slidesPerView: 3,
+      spaceBetween: 22,
+      centeredSlides: false
+    }
+  }
+});
+
 
 });
