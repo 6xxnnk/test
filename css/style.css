@@ -1480,9 +1480,7 @@ body{
   }
 
   /* ✅ 핵심: 슬라이드 1개씩 */
-  .equip-swiper .swiper-slide{
-    width: 100% !important;
-  }
+
 
   .equip-card{
     width: 100%;
