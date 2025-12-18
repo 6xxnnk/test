@@ -945,11 +945,13 @@ a{ color:inherit; text-decoration:none; }
   object-fit: contain;
 }
 
-.info2__fine{
+.info2__fine2{
   margin-top: 18px;
   font-size: 13px;
   line-height: 1.7;
   color: var(--t-500);
+
+  
 }
 
 /* =========================
@@ -1565,6 +1567,7 @@ body{
   }
   .info2__fine {
    text-align: center;
+
   }
   /* 시간 줄 */
   .info2__content .info-time{
