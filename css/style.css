@@ -1425,7 +1425,6 @@ body{
 
   /* ✅ 핵심 2: 카드 width 고정 해제 → 1.3개 보이게 */
   .treat-swiper .swiper-slide{
-    width: 78% !important;     /* ✅ 1.3개 정도(= 1 / 0.78 ≈ 1.28) */
     height: 350px;
 
   }
