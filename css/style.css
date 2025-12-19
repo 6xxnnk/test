@@ -708,7 +708,7 @@ body.nav-lock{
   line-height: 1.7;
   color: rgba(255,255,255,.72);
 }
-.only-pc{ display: inline; }
+
 /* 화살표(스샷처럼 우측 상단) */
 /* .treat-nav{
   position:absolute;
@@ -1463,7 +1463,7 @@ body{
   .about3__headline{ font-size: 18px; }
   .about3__body{ 
     font-size: 14px;
-    padding: 0 px;}
+    padding: 0 56px;}
 
   .about3__photoCard{
     height: 260px;
