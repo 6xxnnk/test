@@ -144,6 +144,108 @@ a{ color:inherit; text-decoration:none; }
 }
 .gnb a:hover::after{ width:100%; }
 
+
+.menu-btn{
+  display:none;            /* 모바일에서만 표시 */
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.menu-btn__icon{
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* 기본: 햄버거만 보이기 */
+.menu-btn__icon--close{ display:none; }
+
+/* 열림 상태: X만 보이기 */
+.header.is-open .menu-btn__icon--open{ display:none; }
+.header.is-open .menu-btn__icon--close{ display:block; }
+
+/* ===== Mobile menu panel ===== */
+.mnav{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 109px; /* 기본은 데스크탑 헤더 높이 기준 */
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-3);
+  z-index: 99;
+
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+}
+
+.mnav__inner{
+  width: min(92vw, 420px);
+  margin: 0 auto;
+  padding: 18px 0 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.mnav a{
+  display:block;
+  padding: 12px 6px;
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--t-900);
+}
+
+/* 열림 상태 */
+.header.is-open .mnav{
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ✅ body 스크롤 잠금 클래스 */
+body.nav-lock{
+  overflow: hidden;
+  touch-action: none;
+}
+
+@media (max-width: 480px){
+  .header__inner{
+    width: 92vw;
+    height: 72px;            /* 모바일 헤더 높이 */
+  }
+  .brand__logo{ height: 44px; }
+
+  .gnb{ display:none; }
+  .menu-btn{ display:flex; align-items:center; justify-content:center; }
+
+  .mnav{ top: 72px; }        /* 모바일 헤더 높이와 맞춤 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
    HERO (match screenshot)
 ========================= */
@@ -1583,3 +1685,8 @@ body{
   .footer__links a{ font-size: 12px; }
   .footer__copyright{ font-size: 11px;
   padding: 0 40px; }
+
+
+
+
+
