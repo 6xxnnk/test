@@ -1030,7 +1030,7 @@ body.nav-lock{
   display:flex;
   align-items:center;
   gap: 18px;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.45;
   color: var(--t-700);
 }
