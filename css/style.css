@@ -1056,6 +1056,32 @@ body.nav-lock{
   
 }
 
+.info2__map{
+  width: 100%;
+  overflow: hidden;
+}
+.map-open-btn{
+  display:none;
+}
+
+@media (max-width:480px){
+  .map-open-btn{
+    padding: 14px;
+    text-align: center;
+    border-radius: 10px;
+    background: #3c1e1e;
+    color:#fff;
+    font-weight:600;
+    display: inline-flex;
+    width: auto;                 /* ⬅️ 핵심 */
+    padding: 12px 20px;          /* 좌우 여백만 */
+    margin: 12px;         /* 가운데 정렬 */
+    justify-content: center;
+  }
+}
+
+
+
 /* =========================
    FOOTER (no bottom gap)
 ========================= */.footer{
