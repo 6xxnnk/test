@@ -919,20 +919,46 @@ body.nav-lock{
 }
 
 /* RIGHT MAP 고정 폭 */
-.info2__map{
-  width: 861px;
-  background:#fff;
+.info2__map {
+  width: 861px;          /* PC 기준 */
+  background: #fff;
   border-left: 1px solid #e9eef7;
   overflow: hidden;
+  position: relative;
 }
 
-.info2__map iframe{
-  width: 100%;
-  height: 100%;
-  min-height: 881px;
-  border: 0;
-  display: block;
+/* 카카오맵 wrapper */
+.info2__map .root_daum_roughmap {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 881px;     /* PC에서 이미지처럼 크게 */
 }
+
+/* 내부 map div 강제 풀사이즈 */
+.info2__map .root_daum_roughmap > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 1024px) {
+  .info2__wrap {
+    flex-direction: column;
+  }
+
+  .info2__map {
+    width: 100%;
+    height: 360px;
+    border-left: 0;
+    border-top: 1px solid #e9eef7;
+  }
+
+  .info2__map .root_daum_roughmap {
+    min-height: 360px;
+  }
+}
+
+
+
 
 /* 공통 row: (왼쪽 라벨 + 오른쪽 내용) */
 .info2__row{
