@@ -1285,6 +1285,7 @@ body{
   .doctor-name{
     margin: 40px 0 20px;
     font-size: 18px;
+    text-align: center;
   }
 
   .doctor-name strong{
@@ -1512,10 +1513,10 @@ body{
     padding: 70px 0;
   }
   .about3__title{ font-size: 34px; }
-  .about3__headline{ font-size: 18px; }
+  .about3__headline{ font-size: 17px; }
   .about3__body{ 
     font-size: 14px;
-    padding: 0 56px;}
+    padding: 0 38px;}
 
   .about3__photoCard{
     height: 260px;
@@ -1532,7 +1533,9 @@ body{
   }
   .doctors h3{ font-size: 34px;}
   .doctor-name strong{ font-size: 30px; }
-  .doctor-profile ul{ font-size: 14px; }
+  .doctor-profile ul{ font-size: 14px;
+    padding: 0;
+   }
   .doctors__photo { justify-content: flex-start;}
   .doctors__photo img{ 
     max-width: 340px;
