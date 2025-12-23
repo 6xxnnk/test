@@ -1497,10 +1497,10 @@ body{
     padding-right: 18px;
   }
   .hero-kicker{ font-size: 11px; }
-  .hero-title{ font-size: 33px; line-height: 1.12; }
+  .hero-title{ font-size: 32px; line-height: 1.12; }
   .hero-desc{ 
     font-size: 15px;
-    padding: 0 110px 0 0}
+    padding: 0}
 
   .hero-pagination{
     left: calc((100% - var(--container))/2 + 18px) !important;
