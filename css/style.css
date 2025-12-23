@@ -234,18 +234,6 @@ body.nav-lock{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================
    HERO (match screenshot)
 ========================= */
@@ -332,6 +320,8 @@ body.nav-lock{
   font-size: 28px;
   line-height: 1.7;
   color:#484848;
+  
+  white-space: nowrap;   /* ✅ 한 줄 */
 }
 
 /* hero pagination: 이미지처럼 (active=캡슐, inactive=원) */
@@ -430,11 +420,16 @@ body.nav-lock{
 }
 
 .about3__body{
-  margin: 10px;
   font-size: 20px;
-  line-height: 1.3;
+  line-height: 1.7;
   color: rgba(25,25,25,.55);
   font-weight: 400;
+  word-break: keep-all;        /* ✅ 한글 단어 중간 잘림 방지 */
+  overflow-wrap: break-word;  /* ✅ 긴 문장 안전 처리 */
+}
+
+.about3__body span{
+  display: block;
 }
 
 
@@ -1500,8 +1495,11 @@ body{
   .hero-kicker{ font-size: 11px; }
   .hero-title{ font-size: 32px; line-height: 1.12; }
   .hero-desc{ 
-    font-size: 15px;
-    padding: 0}
+    white-space: normal;   /* 줄바꿈 허용 */
+    max-width: 200px;      /* ✅ 이 값으로 2줄 고정 */
+    font-size: 14px;
+    line-height: 1.6;
+  }
 
   .hero-pagination{
     left: calc((100% - var(--container))/2 + 18px) !important;
@@ -1742,6 +1740,16 @@ body{
   padding: 0 40px; }
 
 
+/* 모바일: 자연 줄바꿈 기기별 차이 제거 */
+@media (max-width: 768px){
+  .about3__body{
 
+    font-size: 14px;
+    line-height: 1.7;
+  }
 
+  .about3__body span{
+    display: inline;   /* ✅ 강제 줄바꿈 제거 */
+  }
+}
 
